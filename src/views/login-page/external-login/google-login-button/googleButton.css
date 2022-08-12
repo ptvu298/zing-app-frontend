@@ -1,0 +1,11 @@
+.google-login-button button {
+  width: 100%;
+  justify-content: center;
+  border-radius: 4px !important;
+}
+
+.google-login-button span {
+  font-weight: 800 !important;
+  font-family: "Lucida Sans Unicode";
+  color: black;
+}

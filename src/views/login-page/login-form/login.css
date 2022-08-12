@@ -1,0 +1,70 @@
+.logoTop {
+  width: 50%;
+  height: 20%;
+  position: absolute;
+  background-color: #e7a94b;
+  right: 0;
+  top: -20px;
+  border-radius: 0 0 0 500px;
+}
+
+.imgLogoTop {
+  width: 50%;
+  position: absolute;
+  right: 30px;
+  top: 50px;
+}
+
+.zingTitle {
+  color: #e7a94b;
+  font-size: 35px;
+  font-weight: 700;
+  position: relative;
+}
+
+.zingTitle::after {
+  content: "";
+  background: #e7a94b;
+  position: absolute;
+  bottom: -10px;
+  left: 0;
+  height: 3px;
+  width: 30px;
+}
+
+.rewardTitle {
+  font-size: 20px;
+  color: #fff;
+  margin: 20px 0 20px 0;
+}
+
+.welcomeTitle {
+  color: #fff;
+  font-size: 30px;
+  margin: 30px 0 20px 0;
+}
+
+#email-login-label,
+#password-login-label,
+#email-forgot-label {
+  color: #8d8d8d;
+}
+
+@media only screen and (max-width: 600px) {
+  .logoTop {
+    width: 50%;
+    height: 24%;
+    position: absolute;
+    background-color: #e7a94b;
+    right: 0;
+    top: -20px;
+    border-radius: 0 0 0 500px;
+  }
+
+  .imgLogoTop {
+    width: 50%;
+    position: absolute;
+    right: 33px;
+    top: 33px;
+  }
+}

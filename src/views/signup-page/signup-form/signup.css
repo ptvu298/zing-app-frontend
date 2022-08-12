@@ -1,0 +1,13 @@
+#firstName-label,
+#lastName-label,
+#phoneNumber-label,
+#confirmPassword-label,
+#date-label,
+#email-signup-label,
+#password-signup-label {
+  color: #8d8d8d;
+}
+/* 
+#gender-select{
+    display: none;
+} */
