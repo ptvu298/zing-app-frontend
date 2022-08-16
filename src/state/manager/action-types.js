@@ -7,7 +7,6 @@ export const UPDATE_USER_SELECTED = 'UPDATE_USER_SELECTED';
 export const USER_UNSELECTED = 'USER_UNSELECTED';
 export const USER_EDIT_PROFILE = 'USER_EDIT_PROFILE';
 export const STORE_USERS = 'STORE_USERS';
-// export const USER_GOOGLE_RESPONSE = 'USER_GOOGLE_RESPONSE';
 
 // =========== response type ============
 export const GOOGLE_RESPONSE = 'GOOGLE_RESPONSE';

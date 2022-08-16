@@ -13,35 +13,39 @@ import { withStyles } from "@material-ui/core/styles";
 import Validator from "validator";
 import logo2 from "../../../logos/Zing_Logo.png"
 import PropTypes from "prop-types";
-import { alpha, Divider, makeStyles } from "@material-ui/core";
+import {
+  alpha,
+  // Divider,
+  makeStyles
+} from "@material-ui/core";
 import './login.css'
-import GoogleButton from "../external-login/google-login-button/cmp-google-button";
+import GoogleButton from "../external-login/google-login-button/cnt-google-buttton"
 
-function PoweredBy() {
-  return (
-    <Typography variant="body2" style={{ color: "white" }} align="center">
-      {"Powered by "}
-      <Link style={{ color: "white" }} href="http://www.redharestudios.sg/">
-        Guppy
-      </Link>{" "}
-      {/* {new Date().getFullYear()} */}
-      {/* {'.'} */}
-    </Typography>
-  );
-}
+// function PoweredBy() {
+//   return (
+//     <Typography variant="body2" style={{ color: "white" }} align="center">
+//       {"Powered by "}
+//       <Link style={{ color: "white" }} href="http://www.redharestudios.sg/">
+//         Guppy
+//       </Link>{" "}
+//       {/* {new Date().getFullYear()} */}
+//       {/* {'.'} */}
+//     </Typography>
+//   );
+// }
 
-function Copyright() {
-  return (
-    <Typography variant="body2" style={{ color: "white" }} align="center">
-      {"Copyright © "}
-      <Link style={{ color: "white" }} href="http://www.redharestudios.sg/">
-        Zing Ventures
-      </Link>{" "}
-      {new Date().getFullYear()}
-      {"."}
-    </Typography>
-  );
-}
+// function Copyright() {
+//   return (
+//     <Typography variant="body2" style={{ color: "white" }} align="center">
+//       {"Copyright © "}
+//       <Link style={{ color: "white" }} href="http://www.redharestudios.sg/">
+//         Zing Ventures
+//       </Link>{" "}
+//       {new Date().getFullYear()}
+//       {"."}
+//     </Typography>
+//   );
+// }
 
 const useStylesTF = makeStyles((theme) => ({
 
@@ -56,7 +60,6 @@ const useStylesTF = makeStyles((theme) => ({
     backgroundColor: 'transparent',
     transition: theme.transitions.create(['border-color', 'box-shadow']),
     '&:hover': {
-
     },
 
     '&$focused': {
@@ -318,9 +321,7 @@ class LoginFormComponent extends Component {
 
                 <Grid container spacing={2}>
                   <Grid item xs={12} className={classes.loginGoogleGroup}>
-                    <GoogleButton
-                      loginWithGoogle={this.props.loginWithGoogle}
-                    />
+                    <GoogleButton />
                   </Grid>
                 </Grid>
 
@@ -330,7 +331,6 @@ class LoginFormComponent extends Component {
                     Join us now
                   </Link>
                 </Grid>
-
               </form>
             </div>
           </Container>

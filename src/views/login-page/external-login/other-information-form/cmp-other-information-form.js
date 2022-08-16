@@ -197,13 +197,18 @@ class OtherInfoFormComponent extends Component {
             confirmPassword: "",
             firstName: "",
             lastName: "",
-            typeLogin: "Local",
+            typeLogin: "Google",
         },
         birthDate: new Date().toISOString().split("T")[0],
         gender: "",
         phoneNumber: "",
         errors: {},
+        response: '',
     };
+
+    componentDidMount() {
+
+    }
     onChange = (e) => {
         this.setState({
             ...this.state,

@@ -1,6 +1,7 @@
 import { connect } from "react-redux";
 import GoogleButton from "./cmp-google-button";
-// import { loginWithGoogle } from "../../../../state/feature/external-login/response-action";
+import { saveGoogleResponse } from "../../../../state/feature/external-login/response-action";
+// import { getGuppyAccountIntegrationSetting } from "../../../../state/feature/authConfig/authConfig-action"
 
 function mapStateToProps(state) {
     return {
@@ -9,5 +10,6 @@ function mapStateToProps(state) {
 }
 
 export default connect(mapStateToProps, {
-    // loginWithGoogle
+    saveGoogleResponse,
+    // getGuppyAccountIntegrationSetting
 })(GoogleButton);

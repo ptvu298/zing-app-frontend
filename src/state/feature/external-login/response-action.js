@@ -1,20 +1,13 @@
 import { GOOGLE_RESPONSE } from "../../manager/action-types";
-import jwtDecode from 'jwt-decode';
+// import jwtDecode from 'jwt-decode';
 
-export const getGoogleResponse = (payload) => ({
+export const getGoogleResponse = (response) => ({
     type: GOOGLE_RESPONSE,
-    payload
+    response
 });
 
-// export default {
-//     decodeResponse: (response) =>
-//         jwtDecode(response.credential)
-//             .then((res) => res)
-// };
+export const saveGoogleResponse = (response) => (dispatch) => {
+    console.log("response", response)
+    dispatch(getGoogleResponse(response));
+}
 
-// export const loginWithGoogle = (response) => (dispatch) => ({
-//     dispatch(getGoogleResponse(jwtDecode(response.credential)))
-// });
-
-export const loginWithGoogle = (response) => (dispatch) =>
-    dispatch(getGoogleResponse(jwtDecode(response.credential)))

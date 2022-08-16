@@ -2,13 +2,12 @@ import userApi from "../../../api/api-controllers/user-controller";
 import {
   USER_LOGGED_IN,
   USER_LOGGED_OUT,
-  USER_SESSION,
-  USER_GOOGLE_RESPONSE,
+  // USER_SESSION,
 } from "../../manager/action-types";
 import decode from "jwt-decode";
 import setAuthorizationHeader from "../../utils/authorization-header";
 import jwtDecode from "jwt-decode";
-import { Store } from "@material-ui/icons";
+// import { Store } from "@material-ui/icons";
 
 export const userLoggedIn = (user) => ({
   type: USER_LOGGED_IN,

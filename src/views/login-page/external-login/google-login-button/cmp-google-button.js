@@ -1,13 +1,15 @@
 import { Component, React } from 'react';
 import './googleButton.css'
 import jwtDecode from 'jwt-decode';
+import { Redirect } from 'react-router';
 
 class GoogleButton extends Component {
 
     constructor(props) {
         super(props);
-        // this.state = {
-        // };
+        this.state = {
+            credential: '',
+        };
         this.handleCallbackResponse = this.handleCallbackResponse.bind(this);
     }
 
@@ -20,9 +22,11 @@ class GoogleButton extends Component {
         console.log('Last Name: ' + responsePayload.family_name);
         console.log("Image URL: " + responsePayload.picture);
         console.log("Email: " + responsePayload.email);
+        // console.log("props", this.props)
+        this.props.saveGoogleResponse(response);
 
-        // this.setState(response);
-        this.props.loginWithGoogle(response);
+        this.setState({ credential: response.credential });
+        // window.location.href = "/addOnInfo";
     }
 
     componentDidMount() {
@@ -30,9 +34,8 @@ class GoogleButton extends Component {
         google.accounts.id.initialize({
             client_id: process.env.REACT_APP_GOOGLE_CLIENT_ID,
             callback: this.handleCallbackResponse,
-            login_uri: '/addOnInfo'
         });
-        
+
         google.accounts.id.renderButton(
             document.getElementById("signInDiv"),
             {
@@ -43,6 +46,8 @@ class GoogleButton extends Component {
                 shape: 'rectangular',
             }
         );
+
+        // this.props.getGuppyAccountIntegrationSetting()
     }
 
     render() {
@@ -53,7 +58,12 @@ class GoogleButton extends Component {
                     alignItems: 'center',
                     justifyContent: 'center'
                 }}
-            ></div>
+            >
+                {
+                    this.state.credential != '' ? (<Redirect to='/addOnInfo' />) : (<></>)
+                }
+
+            </div>
         )
 
     }

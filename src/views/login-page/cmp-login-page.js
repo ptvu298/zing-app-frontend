@@ -8,7 +8,6 @@ class LoginPageComponent extends Component {
         <LoginFormContainer
           submit={this.props.login}
           getGuppyUserByEmail={this.props.getGuppyUserByEmail}
-          loginWithGoogle = {this.props.loginWithGoogle}
         />
         {/* <ParticlesBg type="cobweb" bg={true} color={'#4dd0e1'} /> */}
       </div>
