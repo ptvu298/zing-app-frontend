@@ -60,7 +60,8 @@ class GoogleButton extends Component {
                 }}
             >
                 {
-                    this.state.credential != '' ? (<Redirect to='/addOnInfo' />) : (<></>)
+                    // this.state.credential != '' ? (<Redirect to='/addOnInfo' />) : (<></>)
+                    console.log(this.props)
                 }
 
             </div>

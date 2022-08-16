@@ -10,7 +10,7 @@ import NavigationContainer from "../views/common/navigation/cnt-navigation";
 import PromotionPageContainer from "../zing-components/promotion-page/cnt-promotion-page";
 import ForgotPasswordPageContainer from "../views/forgot-password-page/cnt-forgot-password-page";
 import ResetPasswordPageContainer from "../views/reset-password-page/cnt-reset-password-page";
-import OtherInfoFormComponent from "../views/login-page/external-login/other-information-form/cmp-other-information-form";
+import OtherInfoFormComponent from "../views/login-page/external-login/other-information-form/cnt-other-information-form";
 
 class AppComponent extends Component {
   render() {

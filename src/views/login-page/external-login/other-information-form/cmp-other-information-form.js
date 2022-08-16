@@ -1,6 +1,13 @@
 import React, { Component } from "react";
-import { alpha, InputLabel, makeStyles, Menu, MenuItem, NativeSelect } from "@material-ui/core";
-import Select from "@material-ui/core/Select";
+import {
+    alpha,
+    // InputLabel,
+    makeStyles,
+    // Menu,
+    // MenuItem,
+    NativeSelect
+} from "@material-ui/core";
+// import Select from "@material-ui/core/Select";
 import Link from "@material-ui/core/Link";
 import Grid from "@material-ui/core/Grid";
 import Box from "@material-ui/core/Box";
@@ -14,6 +21,8 @@ import FormControl from "@material-ui/core/FormControl";
 import Validator from "validator";
 import InputBase from '@material-ui/core/InputBase';
 import './other-information-form.css'
+
+// import store from '../../../../app/store'
 
 function PoweredBy() {
     return (
@@ -190,25 +199,48 @@ const styles = (theme) => ({
     }
 });
 class OtherInfoFormComponent extends Component {
-    state = {
-        data: {
-            email: "",
-            password: "",
-            confirmPassword: "",
-            firstName: "",
-            lastName: "",
-            typeLogin: "Google",
-        },
-        birthDate: new Date().toISOString().split("T")[0],
-        gender: "",
-        phoneNumber: "",
-        errors: {},
-        response: '',
-    };
+    constructor(props) {
+        super(props);
 
-    componentDidMount() {
-
+        this.state = {
+            data: {
+                email: "",
+                password: "",
+                confirmPassword: "",
+                firstName: "",
+                lastName: "",
+                typeLogin: "Google",
+            },
+            birthDate: new Date().toISOString().split("T")[0],
+            gender: "",
+            phoneNumber: "",
+            errors: {},
+            response: "",
+        };
     }
+
+    // state = {
+    //     data: {
+    //         email: "",
+    //         password: "",
+    //         confirmPassword: "",
+    //         firstName: "",
+    //         lastName: "",
+    //         typeLogin: "Google",
+    //     },
+    //     birthDate: new Date().toISOString().split("T")[0],
+    //     gender: "",
+    //     phoneNumber: "",
+    //     errors: {},
+    //     response: '',
+    // };
+
+    componentDidMount = () => {
+        let { externalLoginReponse } = this.props
+        console.log("externalLoginReponse", externalLoginReponse)
+        console.log("credential", externalLoginReponse.credential)
+    }
+
     onChange = (e) => {
         this.setState({
             ...this.state,
