@@ -26,10 +26,7 @@ class SignupPageComponent extends Component {
           ...{ apiKey: this.props.authConfig.apiKey },
         }).then(() => {
           const userProfile = {
-            email: profile.data.email,
-            firstName: profile.data.firstName,
-            lastName: profile.data.lastName,
-            typeLogin: profile.data.typeLogin,
+            email: profile.data.email,                     
             dateCreated: new Date().getTime(),
             birthDate : new Date(profile.birthDate).getTime(),
             gender: profile.gender,

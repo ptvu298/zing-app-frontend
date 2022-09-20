@@ -11,7 +11,7 @@ import Typography from "@material-ui/core/Typography";
 import Container from "@material-ui/core/Container";
 import { withStyles } from "@material-ui/core/styles";
 import Validator from "validator";
-import logo2 from "../../../logos/Zing_Logo.png"
+import logo2 from "../../../logos/ZingLogo.png"
 import PropTypes from "prop-types";
 import {
   alpha,
@@ -217,7 +217,7 @@ class LoginFormComponent extends Component {
     const { data, errors, loading } = this.state;
     return (
       <div>
-        <div className="logoTop">
+        <div>
           <img src={logo2} className="imgLogoTop" />
         </div>
 

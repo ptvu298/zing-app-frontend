@@ -22,6 +22,8 @@ import Validator from "validator";
 import InputBase from '@material-ui/core/InputBase';
 import './other-information-form.css'
 
+import jwtDecode from "jwt-decode";
+import { Redirect } from "react-router";
 // import store from '../../../../app/store'
 
 function PoweredBy() {
@@ -215,30 +217,28 @@ class OtherInfoFormComponent extends Component {
             gender: "",
             phoneNumber: "",
             errors: {},
-            response: "",
         };
     }
 
-    // state = {
-    //     data: {
-    //         email: "",
-    //         password: "",
-    //         confirmPassword: "",
-    //         firstName: "",
-    //         lastName: "",
-    //         typeLogin: "Google",
-    //     },
-    //     birthDate: new Date().toISOString().split("T")[0],
-    //     gender: "",
-    //     phoneNumber: "",
-    //     errors: {},
-    //     response: '',
-    // };
 
     componentDidMount = () => {
         let { externalLoginReponse } = this.props
         console.log("externalLoginReponse", externalLoginReponse)
-        console.log("credential", externalLoginReponse.credential)
+
+        let payload = jwtDecode(externalLoginReponse.credential)
+        console.log("payload", payload)
+
+        this.setState({
+            data: {
+                email: payload.email,
+                password: "",
+                confirmPassword: "",
+                firstName: payload.given_name,
+                lastName: payload.family_name,
+                typeLogin: "Google",
+            }
+        })
+
     }
 
     onChange = (e) => {
@@ -310,15 +310,17 @@ class OtherInfoFormComponent extends Component {
             this.setState({ errors });
         } else {
             this.props.getGuppyUserByEmail(this.state.data.email).then((payload) => {
-                if (payload) {
-                    const { errors } = this.state;
-                    errors.email = "The email is invalid or already used";
-                    this.setState({ errors: errors });
-                } else {
-                    this.props.submit({ ...this.state, ...this.props.apiConfig });
-                }
+                // if (payload) {
+                //     const { errors } = this.state;
+                //     errors.email = "The email is invalid or already used";
+                //     this.setState({ errors: errors });
+                // } else {
+                this.props.submit({ ...this.state, ...this.props.apiConfig });
+                // }
             });
         }
+
+        // <Redirect to={"/promotion"} />
     };
 
     render() {
@@ -491,16 +493,17 @@ class OtherInfoFormComponent extends Component {
                                 </Grid> */}
 
                             </Grid>
-                            {/* <Button
+                            <Button
                                 type="submit"
                                 fullWidth
                                 variant="contained"
                                 className={classes.submit}
+
                             >
                                 Sign Up
-                            </Button> */}
+                            </Button>
 
-                            <Grid className={classes.signinAlign}>
+                            {/* <Grid className={classes.signinAlign}>
                                 <Button
                                     component={Link}
                                     fullWidth
@@ -511,7 +514,7 @@ class OtherInfoFormComponent extends Component {
                                 >
                                     Sign In
                                 </Button>
-                            </Grid>
+                            </Grid> */}
                         </form>
                     </div>
                     <Box mt={5}>

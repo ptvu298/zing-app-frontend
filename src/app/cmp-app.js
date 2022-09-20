@@ -10,7 +10,8 @@ import NavigationContainer from "../views/common/navigation/cnt-navigation";
 import PromotionPageContainer from "../zing-components/promotion-page/cnt-promotion-page";
 import ForgotPasswordPageContainer from "../views/forgot-password-page/cnt-forgot-password-page";
 import ResetPasswordPageContainer from "../views/reset-password-page/cnt-reset-password-page";
-import OtherInfoFormComponent from "../views/login-page/external-login/other-information-form/cnt-other-information-form";
+// import OtherInfoFormComponent from "../views/login-page/external-login/other-information-form/cnt-other-information-form";
+import OtherInfoPageComponent from "../views/login-page/external-login/other-information-page/cmp-other-information-page";
 
 class AppComponent extends Component {
   render() {
@@ -58,7 +59,7 @@ class AppComponent extends Component {
           location={location}
           path="/addOnInfo"
           exact
-          component={OtherInfoFormComponent}
+          component={OtherInfoPageComponent}
         ></GuestRoute>
 
         <UserRoute

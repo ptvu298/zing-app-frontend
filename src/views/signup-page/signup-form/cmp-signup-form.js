@@ -266,8 +266,10 @@ class SignupFormComponent extends Component {
       this.setState({ errors });
     } else {
       this.props.getGuppyUserByEmail(this.state.data.email).then((payload) => {
-        if (payload) {
+        console.log(payload.status);
+        if (payload.status != "OK") {
           const { errors } = this.state;
+         
           errors.email = "The email is invalid or already used";
           this.setState({ errors: errors });
         } else {
@@ -298,11 +300,9 @@ class SignupFormComponent extends Component {
         <Container component="main" maxWidth="xs">
           <CssBaseline />
           <div className={classes.paper}>
-            {/* <img src={logo} className={classes.logo} /> */}
             <Grid container spacing={2}>
               <Grid item xs={6} align="left">
                 <div className="zingTitle">Z I N G</div>
-                {/* <hr className="hrTitle" /> */}
                 <div className="rewardTitle">Rewards</div>
               </Grid>
             </Grid>
@@ -361,7 +361,6 @@ class SignupFormComponent extends Component {
                 {/* This is for gender selection */}
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth className={classes.formSelect}>
-                    {/* <InputLabel htmlFor="gender-select">Gender</InputLabel> */}
                     <NativeSelect
                       id="gender-select"
                       sx={{ backgroundColor: "red" }}
@@ -466,23 +465,10 @@ class SignupFormComponent extends Component {
                   Sign In
                 </Button>
               </Grid>
-
-              {/* <Grid container>
-                <Grid item>
-                  <Link
-                    href="login"
-                    variant="body2"
-                    style={{ fontFamily: "Lucida Sans Unicode" }}
-                  >
-                    Already have an account? Sign in
-                  </Link>
-                </Grid>
-              </Grid> */}
             </form>
           </div>
           <Box mt={5}>
             <Copyright />
-            {/* <PoweredBy /> */}
           </Box>
         </Container>
       </Box>

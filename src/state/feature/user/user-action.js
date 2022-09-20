@@ -73,3 +73,7 @@ export const changePassword = (data) => (dispatch) =>
 
 export const receiveVerifyCode = (data) => (dispatch) =>
   userApi.receiveVerifyCode(data);
+
+export const getUserProfile = (data) => (dispatch) => {
+  userApi.getUserProfile(data);
+}

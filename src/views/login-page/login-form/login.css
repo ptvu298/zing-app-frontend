@@ -1,6 +1,6 @@
 .logoTop {
   width: 50%;
-  height: 20%;
+  height: 30%;
   position: absolute;
   background-color: #e7a94b;
   right: 0;
@@ -9,10 +9,11 @@
 }
 
 .imgLogoTop {
-  width: 50%;
+  width: 35%;
+  height: 25%;
   position: absolute;
-  right: 30px;
-  top: 50px;
+  right: 0;
+  top: 0;
 }
 
 .zingTitle {
@@ -51,20 +52,11 @@
 }
 
 @media only screen and (max-width: 600px) {
-  .logoTop {
-    width: 50%;
-    height: 24%;
-    position: absolute;
-    background-color: #e7a94b;
-    right: 0;
-    top: -20px;
-    border-radius: 0 0 0 500px;
-  }
-
   .imgLogoTop {
     width: 50%;
+    height: 20%;
     position: absolute;
-    right: 33px;
-    top: 33px;
+    right: 0;
+    top: 0;
   }
 }
